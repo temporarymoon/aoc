@@ -2,6 +2,7 @@ dependencies:
   fs-extra: 8.1.0
 devDependencies:
   '@types/fs-extra': 8.0.1
+  '@types/node': 12.12.14
 lockfileVersion: 5.1
 packages:
   /@types/fs-extra/8.0.1:
@@ -42,4 +43,5 @@ packages:
       integrity: sha512-rBJeI5CXAlmy1pV+617WB9J63U6XcazHHF2f2dbJix4XzpUF0RS3Zbj0FGIOCAva5P/d/GBOYaACQ1w+0azUkg==
 specifiers:
   '@types/fs-extra': ^8.0.1
+  '@types/node': ^12.12.14
   fs-extra: ^8.1.0
