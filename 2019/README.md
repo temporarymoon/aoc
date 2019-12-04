@@ -5,4 +5,4 @@ Repo for my solutions to [2019s advent of code challenges](https://adventofcode.
 Running:
 
 - days 1 & 2 are made in typescript (So you'll need ts-node or something similar to run them)
-- day 3 was made in f# (So you'll need the dotnet cli to run it)
+- days 3 & 4 was made in f# (So you'll need the dotnet cli to run it)
