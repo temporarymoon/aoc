@@ -19,12 +19,16 @@ to generate this file without the comments in this block.
   , "foldable-traversable"
   , "integers"
   , "lists"
+  , "maybe"
   , "node-buffer"
   , "node-fs"
   , "prelude"
   , "psci-support"
+  , "sized-vectors"
   , "st"
   , "stringutils"
+  , "tuples"
+  , "typelevel"
   , "zipperarray"
   ]
 , packages = ./packages.dhall
