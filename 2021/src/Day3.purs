@@ -57,26 +57,22 @@ part1 = map (map bitToSign)
 part2Impl :: Boolean -> Array (Array Boolean) -> Maybe Int
 part2Impl bias = go 0
   where
-  go index arr
-    | index >= 12 = Nothing
-    | otherwise =
-        if Array.length remaining == 1 then
-          do
-            first <- Array.head remaining
-            first
-              # map boolToChar
-              # String.fromCharArray
-              # Int.fromStringAs binary
-        else
-          go (index + 1) remaining
-        where
-        { no, yes } = arr # Array.partition \bits -> Array.index bits index
-          == Just true
+  go index arr =
+    if Array.length remaining <= 1 then
+      do
+        first <- Array.head remaining
+        first
+          # map boolToChar
+          # String.fromCharArray
+          # Int.fromStringAs binary
+    else
+      go (index + 1) remaining
+    where
+    { no, yes } = arr # Array.partition \bits -> Array.index bits index
+      == Just true
 
-        remaining = case Array.length yes, Array.length no of
-          la, lb
-            | la >= lb -> if bias then yes else no
-            | otherwise -> if bias then no else yes
+    remaining = case Array.length yes, Array.length no of
+      la, lb -> if (la >= lb) == bias then yes else no
 
 part2 :: Array (Array Boolean) -> Maybe Int
 part2 arr = ado
