@@ -32,31 +32,23 @@ parse = lines
   charToBool '1' = Just true
   charToBool _ = Nothing
 
-toBit :: Char -> Int -> Char
-toBit default x
-  | x > 0 = '1'
-  | x < 0 = '0'
-  | otherwise = default
-
-bitToSign :: Boolean -> Int
-bitToSign bit = if bit then 1 else -1
-
-boolToChar :: Boolean -> Char
-boolToChar true = '1'
-boolToChar false = '0'
-
 part1 :: Array BitArray -> Maybe Int
 part1 = map (map bitToSign)
   >>> sum
-  >>> map (toBit '0')
+  >>> map toBit
   >>> Array.fromFoldable
   >>> String.fromCharArray
   >>> Int.fromStringAs binary
   >>> map \n -> n * (2 `pow` 12 - 1 - n)
+  where
+  toBit x = if x > 0 then '1' else '0'
+  bitToSign bit = if bit then 1 else -1
 
 part2Impl :: Boolean -> Array (Array Boolean) -> Maybe Int
 part2Impl bias = go 0
   where
+  boolToChar = if _ then '1' else '0'
+
   go index arr =
     if Array.length remaining <= 1 then
       do
