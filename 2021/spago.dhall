@@ -14,6 +14,7 @@ to generate this file without the comments in this block.
 , dependencies =
   [ "arrays"
   , "console"
+  , "control"
   , "debug"
   , "effect"
   , "enums"
@@ -32,6 +33,7 @@ to generate this file without the comments in this block.
   , "stringutils"
   , "tuples"
   , "typelevel"
+  , "unordered-collections"
   , "zipperarray"
   ]
 , packages = ./packages.dhall
