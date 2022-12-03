@@ -7,8 +7,7 @@ def input := include_str "input"
 def parse_input(input: String): ParsedInput := 
   input.splitOn "\n\n"
    |> .map fun chunk => 
-     chunk 
-      |> (String.splitOn · "\n")
+     chunk.splitOn  "\n"
       |> .map String.toNat!
 
 def totals(input: ParsedInput): List Nat := 
