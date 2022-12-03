@@ -51,4 +51,3 @@ def part2(input: String): Nat :=
 
 #eval part1 input
 #eval part2 input
-/- #eval part2 input -/
