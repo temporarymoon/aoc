@@ -72,8 +72,7 @@ contains env = memoize2 self
     <#> any (\subBag -> subBag == target || self subBag target)
 
 solve :: MapEnv -> Int
-solve env 
-  = Map.filterKeys go env # Map.size
+solve env = Map.filterKeys go env # Map.size
   where 
   go key = contains env key "shiny gold"
 
@@ -85,7 +84,7 @@ childrenCount env = memoize self
     go name quantity = quantity * (1 + self name)
 
     content :: Array _
-    content = Map.toUnfoldable $ fromMaybe Map.empty (Map.lookup target env)
+    content = Map.toUnfoldable $ fromMaybe Map.empty $ Map.lookup target env
 
 solve' :: MapEnv -> Int
 solve' env = childrenCount env "shiny gold" 
